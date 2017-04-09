@@ -1,17 +1,22 @@
 import { Ingredients } from "../models/ingredients";
+
 export class ShoppingListService {
-  private ingredient: Ingredients[] = [];
+  private ingredients: Ingredients[] = [];
+
   addItem(name: string, amount: number) {
-    this.ingredient.push(new Ingredients(name, amount));
-    console.log(this.ingredient);
+    this.ingredients.push(new Ingredients(name, amount));
+    console.log(this.ingredients);
   }
   addItems(items: Ingredients[]) {
-    this.ingredient.push(...items);
+    this.ingredients.push(...items);
   }
+
   getItems() {
-    return this.ingredient.slice();
+    return this.ingredients.slice();
   }
+
   removeItem(index: number) {
-    this.ingredient.splice(index, 1);
+    this.ingredients.splice(index, 1);
   }
+
 }
